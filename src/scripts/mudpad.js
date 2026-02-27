@@ -1,5 +1,6 @@
 import {init} from "https://esm.sh/modern-monaco"
-import wrapify from "https://esm.sh/@gesslar/wrapify"
+import wrapify from "https://cdn.jsdelivr.net/npm/@gesslar/wrapify"
+import {vsToMonaco} from "./vscode-theme-to-monaco.js"
 
 let editor
 let resizeObserver
@@ -10,10 +11,17 @@ async function initializeEditor() {
     return
 
   const monaco = await init()
+
+  // Load and register a VS Code theme for Monaco
+  const vscodeTheme = await fetch("./themes/blackboard.color-theme.json")
+    .then(r => r.json())
+  const monacoTheme = vsToMonaco(vscodeTheme)
+  monaco.editor.defineTheme("blackboard", monacoTheme)
+
   editor = monaco.editor.create(container, {
     value: "",
     language: "plaintext",
-    theme: "vs-dark",
+    theme: "blackboard",
     glyphMargin: false,
     lineNumbers: "off",
     minimap: {enabled: false},
