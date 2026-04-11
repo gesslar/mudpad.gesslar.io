@@ -8,7 +8,7 @@
     "url": "git+https://github.com/gesslar/mudpad.git"
   },
   "author": "gesslar",
-  "license": "Unlicense",
+  "license": "0BSD",
   "homepage": "https://github.com/gesslar/mudpad#readme",
   "devDependencies": {
     "@gesslar/uglier": "^2.0.0",

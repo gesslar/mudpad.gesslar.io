@@ -11,3 +11,7 @@ Notepad Utility for autowrapping
     git clone git@github.com:gesslar/mudpad.git
 
 test change
+
+## License
+
+`mudpad` is released under the [0BSD](LICENSE.txt).
