@@ -1,5 +1,5 @@
 import {init} from "https://esm.sh/modern-monaco"
-import wrapify from "https://cdn.jsdelivr.net/npm/@gesslar/wrapify"
+import {wrapify} from "https://esm.sh/@gesslar/wrapify"
 import {vsToMonaco} from "./vscode-theme-to-monaco.js"
 
 let editor
